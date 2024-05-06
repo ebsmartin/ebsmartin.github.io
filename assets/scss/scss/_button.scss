@@ -1,0 +1,69 @@
+.link-effect {
+	color: $px-white;
+	font-size: 18px;
+	position: relative;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding-bottom: 3px;
+	background: none;
+	border: none;
+	.white-theme & {
+		color: $px-dark;
+		font-weight: 500;
+	}
+	.bi {
+		margin-left: 6px;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: auto;
+		right: 31px;
+		height: 2px;
+		width: 0;
+		background-image: $px-theme-g;
+		transition: ease all 0.35s;
+	}
+	&:hover {
+		color: $px-white;
+		.white-theme & {
+			color: $px-dark;
+		}
+		&:after {
+			right: auto;
+			left: 0;
+			width: calc(100% - 31px);
+		}
+	}
+}
+
+.px-btn {
+	padding: 0 25px;
+    line-height: 46px;
+    position: relative;
+    display: inline-block;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none !important;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 50px;
+    transition: ease all 0.35s;
+}
+
+.px-btn-primary {
+	background-image:$px-theme-g;
+	color: $px-white;
+	background-size: 200% 100%;
+	background-position: left center;
+	background-position: 0 0;
+	&:hover {
+		//background-image:$px-theme-g-hover;
+		color: $px-white;
+		background-position: 100% 0;
+	}
+}

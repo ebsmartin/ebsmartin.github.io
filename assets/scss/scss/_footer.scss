@@ -1,0 +1,27 @@
+.footer {
+	border-top: 1px solid rgba($px-white,0.1);
+	background: rgba($px-black,0.59);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    position: relative;
+    z-index: 1;
+    .white-theme & {
+        border-top: 1px solid rgba($px-dark,0.1);
+        background: rgba($px-white,0.5);
+    }
+    .nav {
+    	a {
+    		color: rgba($px-white, .8);
+    		margin-right: 10px;
+            .white-theme & {
+                color: rgba($px-dark, .8);
+            }
+    		&:hover {
+    			color: $px-white;
+                .white-theme & {
+                    color: $px-dark;
+                }
+    		}
+    	}
+    }
+}

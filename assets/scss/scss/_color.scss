@@ -1,0 +1,9 @@
+.text-theme {
+	background: linear-gradient(to right, $px-theme, $px-theme3, $px-theme4);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.theme-bg-g {
+	background: $px-theme-g;
+}

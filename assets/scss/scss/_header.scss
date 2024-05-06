@@ -1,0 +1,155 @@
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba($px-white, 0.1);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    z-index: 111;
+    .white-theme & {
+        border-bottom: 1px solid rgba($px-dark, 0.1);
+    }
+    .fixed-header & {
+        background: rgba($px-black, 0.8);
+    }
+    .white-theme.fixed-header & {
+        background: rgba($px-white, 0.8);   
+    }
+
+    .header-nav {
+        padding: 15px 0;
+    }
+
+    @media(min-width: 992px) {
+
+        .navbar-nav {
+            >li {
+                +li {
+                    margin-left: 25px;
+                }
+
+                >.nav-link {
+                    color: $px-white;
+                    text-transform: uppercase;
+                    padding: 0;
+                    letter-spacing: 1px;
+                    font-size: 14px;
+                    position: relative;
+                    .white-theme & {
+                        color: $px-dark;
+                    }
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: auto;
+                        right: 0;
+                        height: 2px;
+                        width: 0;
+                        transition: ease all 0.35s;
+                    }
+
+                    &.active {
+                        &:after {
+                            left: 0;
+                            right: auto;
+                            width: 100%;
+                            background-image: $px-theme-g;
+                        }
+                    }
+                }
+
+                &:hover {
+                    >.nav-link {
+                        &:after {
+                            left: 0;
+                            right: auto;
+                            width: 100%;
+                            background-image: $px-theme-g;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 991px) {
+        .white-theme & {
+            background: rgba($px-white, 0.8);   
+        }
+    	.navbar-toggler {
+		    display: flex;
+		    flex-direction: column;
+		    border: none;
+		    padding: 4px 9px;
+		    outline: none;
+		    box-shadow: none;
+		    span {
+	    	    width: 25px;
+			    height: 2px;
+			    background: $px-white;
+			    margin: 4px 0;
+                .white-theme & {
+                    background: $px-dark;
+                }
+		    }
+		}
+		.navbar-nav {
+			padding-top: 15px;
+            >li {
+            	margin: 8px 0;
+                >.nav-link {
+                    color: $px-white;
+                    text-transform: uppercase;
+                    padding: 0;
+                    letter-spacing: 1px;
+                    font-size: 14px;
+                    position: relative;
+                    .white-theme & {
+                        color: $px-dark;
+                    }
+                    span {
+                    	display: inline-block;
+                    	vertical-align: top;
+                    	position: relative;
+	                    &:after {
+	                        content: "";
+	                        position: absolute;
+	                        bottom: 0;
+	                        left: auto;
+	                        right: 0;
+	                        height: 2px;
+	                        width: 0;
+	                        transition: ease all 0.35s;
+	                    }
+                    }
+
+                    &.active {
+                    	span {
+	                        &:after {
+	                            left: 0;
+	                            right: auto;
+	                            width: 100%;
+	                            background-image: $px-theme-g;
+	                        }
+                        }
+                    }
+                }
+
+                &:hover {
+                    >.nav-link {
+                    	span {
+	                        &:after {
+	                            left: 0;
+	                            right: auto;
+	                            width: 100%;
+	                            background-image: $px-theme-g;
+	                        }
+                    	}
+                    }
+                }
+            }
+        }
+    }
+}
